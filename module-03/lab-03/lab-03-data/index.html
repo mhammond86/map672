@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 03 Starter Template</title>
+    <title>Mofrankton</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -59,8 +59,6 @@
     <footer>
         <p>Map authored by MAX HAMMOND III</p>
         <p>This map shows the cities of Frankfort, Lexington, and Morehead, within the state of Kentucky. The markers give the names of the cities, along with their population.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
-        </p>
     </footer>
 
     <script>
@@ -83,38 +81,33 @@
         map.addLayer(tiles);
         
         
-        var city1Name = "Lexington";
+        var city1Name = "Lexington";  // correct, is string type
         console.log(city1Name);
-        var city1Lat = "38.0297°";
+        var city1Lat = 38.0297;  // should be number type
         console.log(city1Lat);
-        var city1Lon = "-84.4947°";
+        var city1Lon = -84.4947;
         console.log(city1Lon);
-        var city1Pop = "290,263";
+        var city1Pop = 290263;  // should be number type
         console.log(city1Pop);
-        var city1Capital = "false";
+        var city1Capital = false;  // should be boolean type
         console.log(city1Capital);
         
         var city2Name = "Frankfort";
         console.log(city2Name);
-        var city2Lat = "38.1970°";
+        var city2Lat = 38.1970;
         console.log(city2Lat);
-        var city2Lon = "-84.8630°";
+        var city2Lon = -84.8630;
         console.log(city2Lon);
-        var city2Pop = "27,453";
+        var city2Pop = 27453;
         console.log(city2Pop);
-        var city2Capital = "true";
+        var city2Capital = true;
         console.log(city2Capital);
         
-        var city3Name = "Morehead";
-        console.log(city3Name);
-        var city3Lat = "38.1836°"
-        console.log(city3Lat);
-        var city3Lon = "-83.4411°"
-        console.log(city3Lon);
-        var city3Pop = "6,978"
-        console.log(city3Pop);
-        var city3Capital = "false";
-        console.log(city3Capital);
+        var city3Name = "Morehead",
+            city3Lat = 38.1836,
+            city3Lon = -83.4411,
+            city3Pop = 6978,
+            city3Capital = false;
         
         var totalPop = (290263+ 27453 + 6978);
         console.log("The total population of these cities is ", totalPop);
@@ -124,11 +117,9 @@
         var cities = ["Lexington", "Frankfort", "Morehead"];
         console.log(cities[2]);
         
-        // END WRITING CODE FOR LAB 03 HERE
-        
         // CITY1 MARKER CODE HERE
         var city1Popup = "<b>"+city1Name+"</b><br>"
-                        +"<b>population</b>: "+city1Pop;
+                        +"<b>population</b>: "+city1Pop.toLocaleString();
         
         if(city1Capital == true) {
             city1Popup += "<br>Capital of the Commonwealth of Kentucky";   
@@ -139,7 +130,7 @@
         
 //         CITY2 MARKER CODE HERE
         var city2Popup = "<b>"+city2Name+"</b><br>"
-                        +"<b>population</b>: "+city2Pop;
+                        +"<b>population</b>: "+city2Pop.toLocaleString();
         
         if(city2Capital == true) {
             city2Popup += "<br>Capital of the Commonwealth of Kentucky";   
@@ -150,7 +141,7 @@
         
 //         CITY3 MARKER CODE HERE
         var city3Popup = "<b>"+city3Name+"</b><br>"
-                        +"<b>population</b>: "+city3Pop;
+                        +"<b>population</b>: "+city3Pop.toLocaleString();
         
         if(city3Capital == true) {
             city3Popup += "<br>Capital of the Commonwealth of Kentucky";   
