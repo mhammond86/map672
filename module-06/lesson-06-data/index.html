@@ -11,9 +11,298 @@
 
 
 <script>
-/* JavaScript code goes here! */
+//var iguana = { 
+//    name: "Jack",   // a string value
+//    weight: 4.2,    // a numeric value, assume kilograms
+//    age: 8,         // a numeric value
+//    eyes: "dreamy", // a string value
+//    questForWorldDomination: true  // a boolean value
+//}
+//console.log(iguana);
+    
+//    var iguana = { 
+//    questForWorldDomination: true,  
+//    age: 8, 
+//    eyes: "dreamy",
+//    name: "Jack", 
+//    weight: 4.2,
+//    toolkit: {
+//        conquestFlag: "red",
+//        surrenderFlag: "white",
+//        food: true,
+//        music: "Anthrax",
+//        coolSunGlasses: 8
+//    }
+//}
+//console.log(iguana);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true  
+//}
+//console.log(iguana.name); 
+//console.log(iguana.weight);
 
+//    var iguana = { 
+//    questForWorldDomination: true,  
+//    age: 8, 
+//    eyes: "dreamy",
+//    name: "Jack", 
+//    weight: 4.2,
+//    toolkit: {
+//        conquestFlag: "red",
+//        surrenderFlag: "white",
+//        food: true,
+//        music: "Anthrax",
+//        coolSunGlasses: 8
+//    }
+//}
+//console.log(iguana.toolkit.music);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//console.log(iguana["name"]); 
+//console.log(iguana["weight"]);
 
+//    var iguana = { 
+//    questForWorldDomination: true,  
+//    age: 8, 
+//    eyes: "dreamy",
+//    name: "Jack", 
+//    weight: 4.2,
+//    toolkit: {
+//        conquestFlag: "red",
+//        surrenderFlag: "white",
+//        food: true,
+//        music: "Anthrax",
+//        coolSunGlasses: 8
+//    }
+//}
+//console.log(iguana["toolkit"]["music"]); 
+//console.log(iguana["toolkit"].coolSunGlasses);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, // assume kilograms
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//console.log(iguana.weight); // output 4.2
+//console.log(iguana.age); // output 8
+//
+//iguana.weight = 5.2;
+//iguana.age = 9;
+//
+//console.log(iguana.weight); // output 5.2
+//console.log(iguana.age);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//console.log(iguana.weight); 
+//console.log(iguana.age);
+//
+//iguana["weight"] = 6.1;
+//iguana["age"] = 10;
+//
+//console.log(iguana.weight); 
+//console.log(iguana.age);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//console.log(iguana); 
+//    
+//iguana.color = "green";
+//iguana.madGenius = true;
+//
+//console.log(iguana);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//console.log(iguana); 
+//
+//iguana["color"] = "purple";
+//iguana["unlovedAsBaby"] = true; 
+//
+//console.log(iguana);
+    
+//    var myObject = {};
+//    for(var i = 0; i < someValues.length; i++) {
+//        myObject["id"+i] = someValues[i];
+//    }
+//    console.log(myObject);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, // assume kilograms
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//
+//for (var key in iguana) {
+//    console.log(key); 
+//}
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//
+//for (var key in iguana) {
+//    console.log(iguana[key]); 
+//}
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, // assume kilograms
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true 
+//}
+//
+//for (var key in iguana) {
+//    console.log(key, iguana[key]); 
+//}
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true, 
+//    greeting: function() {
+//        console.log("Hello. I am your new overlord.");
+//    }
+//}
+//
+//iguana.greeting();
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true, 
+//    greeting: function(message) {
+//        console.log(message);
+//    }
+//}
+//
+//iguana.greeting("Howdy there.");  
+// iguana.greeting("I am your new overlord."); 
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    length: 1.5, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true, 
+//    calculateBMI: function(w,l) {
+//        return w / (l*l); 
+//    }
+//}
+//      var result = iguana.calculateBMI(4.2,1.5);
+//      console.log(result);
+//    
+//     var result = iguana.calculateBMI(iguana.weight, iguana.length);
+//      console.log(result);
+    
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    length: 1.5, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true, 
+//    calculateBMI: function() {
+//        var w = this.weight;
+//        var l = this.length;
+//        return w/(l*l);
+//    }
+//}
+//
+//var result = iguana.calculateBMI();
+//console.log(result);
+
+//    var iguana = { 
+//    name: "Jack", 
+//    weight: 4.2, 
+//    age: 8, 
+//    eyes: "dreamy",
+//    questForWorldDomination: true, 
+//    invasionPlans: function(inData) {
+//        // iguana can do something with data here
+//        console.log(inData);
+//    }
+//}
+//
+//var lexData = {
+//    lat: 38.23,
+//    lon: -89.21,
+//    name: "Lexington",
+//    pop: 821325
+//
+//}
+//
+//iguana.invasionPlans(lexData);
+    
+//    var cityName = "Lexington";
+//    console.log(cityName);
+//    var cityNameWithState = cityName.concat(", KY"); 
+//    console.log(cityNameWithState);
+    
+//    var cityName = "Lexington";
+//    var cityNameCaps = cityName.toUpperCase();
+//    console.log(cityNameCaps);
+    
+//    var cityName = "Lexington";
+//    console.log(cityName.charAt(4)); 
+//    console.log(cityName.indexOf("x"));
+    
+//    var pop = 1200000;
+//var area = 683.24;
+//var density = pop/area;
+//
+//console.log(density); 
+//
+//var output = density.toLocaleString();
+//
+//console.log(output);
+    
+//    var cities = ["Lexington", "Bowling Green"];
+//    console.log(cities); 
+//    cities.push("Frankfort");
+//    console.log(cities); 
+//    cities.pop();
+//    console.log(cities);
 </script>
     
 </body>
