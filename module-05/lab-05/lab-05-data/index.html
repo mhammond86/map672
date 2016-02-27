@@ -83,9 +83,9 @@
 
     // begin writing/editing Lab 05 code here
 
-    var lexArea = (285.5);
-    var morArea = (9.3);
-    var fraArea = (14.6);
+    var lexArea = 285.5;
+    var morArea = 9.3;
+    var fraArea = 14.6;
     
 
     prepareData(lexArea, morArea, fraArea);
@@ -105,14 +105,15 @@
     }
 
     function mapCities(cities, cityCoords, cityPops, cityAreas) { 
-        var units =("miles");
+        do {
+             var units = prompt('Enter the units for calculating density', 'Enter "miles" or "km"');
+             
+        } while (units != "miles" && units != "km")
 
         for(var i = 0; i < cities.length; i++) {
 
-            var density = (cityPops[i]/cityAreas[i]);
-            
-            calcPopDensity(cityPops, cityAreas, units); 
-           
+            // send single values as arguments to be calculated and assign result to var density
+            var density =  calcPopDensity(cityPops[i], cityAreas[i], units); 
 
             var popup = "<b>"+cities[i]+"</b><br>"
                             +"<b>Population Density</b>: "+density.toLocaleString()+" people per sq " + units;
@@ -124,9 +125,17 @@
     }
 
     function calcPopDensity(cityPops, cityAreas, units) {
+      
+        // values enter function as single numbers and a string value
     
-            var density = (cityPops/cityAreas*units);
-            return density;
+        if(units === 'km'){ // if user entered 'km'
+          // convert the area from miles to km and calculate density
+          var density = cityPops/(cityAreas * 2.59);
+        } else {
+          var density = cityPops/cityAreas;
+        }
+            
+        return density; // return the calculated value to where it was called
             
     }
     
