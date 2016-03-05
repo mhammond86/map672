@@ -67,17 +67,35 @@
 
     <script>
 
-    var map = L.map('map', {
-        center: [40,-94],
-        zoom: 4
-    });
+//    var map = L.map('map', {
+//        center: [40,-94],
+//        zoom: 4
+//    });
+        
+    var options = {
+    center: [40,-94],
+    zoom: 4, // initial zoom level
+    minZoom: 4, 
+    maxZoom: 12
+}
+    var map = L.map('map', options);
+
                 
     var redIguana = L.latLng(40.7718,-111.9124);
         
     map.on('click', function(e){
-        console.log(e.latlng);   
+        var userlocation = e.latlng; 
+        map.setView([e.latlng], 6);
+        
     });
+        
+        var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+map.addLayer(tiles);
                   
+ 
     </script>
     
 </body>
