@@ -52,27 +52,22 @@
 
 <body>
     <header>
-        <h1>Map Title</h1>
-        <h2>Map Subtitle</h2>
+        <h1>User's Distance to the Red Iguana</h1>
+        <h2>I Want Some Mexican Red Iguana</h2>
     </header>
 
     <div id='map'></div>
 
     <footer>
-        <p>Map authored by YOUR NAME</p>
-        <p>Additional information about the data and map goes here.</p>
+        <p>Map authored by Max Hammond III</p>
+        <p>The map shows the users distance to the Red Iguana and the distance from the southwest corner of the map box.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
         </p>
     </footer>
 
     <script>
 
-//    var map = L.map('map', {
-//        center: [40,-94],
-//        zoom: 4
-//    });
-        
-    var options = {
+      var options = {
     center: [40,-94],
     zoom: 4, // initial zoom level
     minZoom: 4, 
@@ -85,9 +80,17 @@
         
     map.on('click', function(e){
         var userlocation = e.latlng; 
-        map.setView([e.latlng], 6);
+        map.setView(userlocation, 6);
+        var mapCenter = userlocation;
+        var distance = mapCenter.distanceTo(redIguana);
+        console.log(distance);
+        var bounds = map.getBounds(); 
+        var bottomLeft = bounds.getSouthWest(); 
+        console.log(bottomLeft.lat, bottomLeft.lng);
+        var distanceSW = bottomLeft.distanceTo(redIguana);
+        console.log(distanceSW);
         
-    });
+        });
         
         var tiles = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
