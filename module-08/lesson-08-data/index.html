@@ -59,101 +59,37 @@
         <p>Map authored by YOUR NAME</p>
         <p>Additional information about the data and map goes here.</p>
     </footer>
-
+    <script src="power-plants.js"></script>
     <script>
 
-     var places = {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "type": "Feature",
-              "properties": {
-                "marker-color": "#7e7e7e",
-                "marker-size": "medium",
-                "marker-symbol": "",
-                "name": "Tallinn",
-                "size": 159
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  24.730224609375,
-                  59.43529984080577
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "marker-color": "#7e7e7e",
-                "marker-size": "medium",
-                "marker-symbol": "",
-                "name": "Haapsalu",
-                "size": 11
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  23.54095458984375,
-                  58.94363272852774
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "marker-color": "#7e7e7e",
-                "marker-size": "medium",
-                "marker-symbol": "",
-                "name": "Parnu",
-                "size": 32
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  24.505691528320312,
-                  58.38191848213762
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "marker-color": "#7e7e7e",
-                "marker-size": "medium",
-                "marker-symbol": "",
-                "name": "Tartu",
-                "size": 39
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  26.72492980957031,
-                  58.37579834033745
-                ]
-              }
-            }
-          ]
-     };
-        var map = L.map('map', {
-            center: [58.73, 25.67], // centered in Estonia
-            zoom: 7
-            });
-
-        var tiles = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-            subdomains: 'abcd',
-            maxZoom: 19
-            });  
-            tiles.addTo(map);
-             
-        var placesLeaflet = L.geoJson(places, {
-        pointToLayer : function(feature, latlng) {
-        console.log(feature);
-        return L.circle(latlng, feature.properties.size*100);
-        }
-        }).addTo(map);
-        
+           var map = L.map('map', {
+                center: [36,-94],
+                zoom: 4,
+                });
+           var tiles = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
+                });  
+                tiles.addTo(map);
+            
+            L.geoJson(plants, {
+                pointToLayer: function(feature,latlng) {
+                        return L.circleMarker(latlng, {
+                            color: 'blue',
+                            weight: 1,
+                            fillColor: 'blue',
+                            fillOpacity: .8,
+                            radius: 2
+                        });   
+                },
+                filter: function(feature, layer) {
+                    if(feature.properties.capacity_mw < 500 && 
+                       feature.properties.fuel_source.Hydro){
+                        return feature;   
+                    }
+                }
+            }).addTo(map);
        
     </script>
     
