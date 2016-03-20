@@ -109,8 +109,8 @@ for(var layer in layerInfo) {
     }).addTo(map);        
     }
         map.on('click', function (e) {
-          for (var layer in layerInfo) {
-               geoJsonLayers[layer].eachLayer(function (layer) {
+          for (var l in layerInfo) {
+               geoJsonLayers[l].eachLayer(function (layer) {
                     var distance = e.latlng.distanceTo(layer.getLatLng()) / 1000;
 
                     if (distance > 500) {
@@ -124,11 +124,20 @@ for(var layer in layerInfo) {
                              , fill: true
                          });
                          
-                         for (var source in layer.feature.properties.fuel_source) {
-                                var fuelsource = source;
-                                }
+                         // problem here is this will pull first one from that plant
+                         // but some have more than one, so may get the wrong one
+//                         for (var source in layer.feature.properties.fuel_source) {
+//                                var fuelsource = source;
+//                                }
                          
-                         layer.bindPopup("<b>"+layer.feature.properties.plant_name+"</b><br>"+ fuelsource + 
+                         // better to use a different variable for the outer loop
+                         // here and take advantage of that layerInfo to get the
+                         // current fuel type
+                         var fuelSource = layerInfo[l].source;
+                         
+                         var fuelAmount = layer.feature.properties.fuel_source[fuelSource];
+                         
+                         layer.bindPopup("<b>"+layer.feature.properties.plant_name+"</b><br>"+ fuelSource +: ' ' + fuelAmount + 
                                          "<br> I am <b>"+distance.toLocaleString()+ 
                                            "km</b><br> from the click point.");
                      }
